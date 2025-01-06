@@ -33,7 +33,15 @@ This tutorial outlines the lifecycle of a ticket from intake to resolution withi
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Ticket Creation (Intake)
+
+A user submits a new ticket through the client portal or via email.
+The system assigns a unique ticket ID and sets the status to "New."
+Assignment and Initial Response
+
+An agent reviews the new ticket and assigns it to the appropriate department or individual.
+The ticket status changes to "Open."
+An acknowledgment is sent to the user, confirming receipt.
 </p>
 <br />
 
@@ -41,7 +49,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Investigation and Resolution
+
+The assigned agent investigates the issue, communicates with the user for additional information if necessary, and works towards resolving the problem.
+Throughout this process, the ticket status remains "Open," and internal notes or responses are documented.
 </p>
 <br />
 
@@ -49,6 +60,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Resolution and Closure
+
+Once the issue is resolved, the agent updates the ticket with the resolution details.
+The ticket status is changed to "Resolved," and a notification is sent to the user with the resolution information.
+After a predefined period or upon user acknowledgment, the ticket is automatically or manually marked as "Closed."
 </p>
 <br />
