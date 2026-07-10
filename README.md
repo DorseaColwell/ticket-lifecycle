@@ -6,16 +6,13 @@
 
 This walkthrough follows a help desk ticket through its full lifecycle in [osTicket](https://osticket.com/), the open-source ticketing system — from the moment a user submits an issue to final resolution and closure. It builds on the environment set up in [osTicket — Prerequisites and Installation](https://github.com/DorseaColwell/osticket-prereqs).
 
+> The screenshots below are from a full re-run of this lab on a local Windows 11 machine — osTicket v1.18.4 on Apache/MariaDB/PHP (XAMPP) — working a real ticket end to end as both the end user and the help desk agent.
+
 ## Environments and Technologies Used
 
-- Microsoft Azure (Virtual Machines / Compute)
-- Remote Desktop (RDP)
-- Internet Information Services (IIS)
-- osTicket
-
-## Operating Systems Used
-
-- Windows 10 21H2
+- osTicket v1.18.4
+- Apache, MariaDB, and PHP 8.2 (XAMPP stack)
+- Windows 11 (local lab; the original course lab ran the same flow in an Azure VM)
 
 ## Ticket Lifecycle at a Glance
 
@@ -33,19 +30,43 @@ flowchart LR
 
 ### 1. Ticket Creation (Intake)
 
-A user submits a new ticket through the client portal or via email. osTicket assigns a unique ticket ID and sets the status to **New**. Help topics (e.g., *Business Critical Outage* vs. *Personal Computer Issues*) route the ticket and set its initial priority.
+A user (here, *Sam Rivera*) submits a ticket through the client portal: contact information, a Help Topic that routes and prioritizes the request (*Report a Problem / Access Issue*), and a description of the issue — no access to a shared drive with a deadline looming.
+
+![End user submitting a new ticket through the client portal](docs/screenshots/01-intake-form.png)
+
+osTicket assigns a unique ticket ID, sets the status to **New**, and confirms intake to the user:
+
+![Ticket creation confirmation in the support center](docs/screenshots/02-intake-confirmation.png)
 
 ### 2. Assignment and Initial Response
 
-An agent reviews the incoming ticket, sets its **priority** and **SLA** based on impact, and assigns it to the appropriate department or individual. The status changes to **Open**, and an acknowledgment is sent to the user confirming receipt.
+On the agent side, the ticket lands in the **Open** queue — unassigned, with a **High** priority inherited from its Help Topic:
+
+![Agent ticket queue showing the new unassigned ticket](docs/screenshots/03-agent-queue-open.png)
+
+Opening the ticket shows everything an agent needs for triage: status, priority, department, SLA plan with a due date, help topic, and the user's full message:
+
+![Ticket detail view before assignment](docs/screenshots/04-ticket-view.png)
 
 ### 3. Working the Issue
 
-The assigned agent investigates, communicating with the user through the ticket thread when more information is needed. All correspondence and internal notes are documented on the ticket, so any agent can pick up the full history. Throughout this stage the ticket remains **Open**.
+The agent investigates and documents the root cause as an **internal note** — visible to staff only, so the full troubleshooting history stays on the ticket:
+
+![Internal note documenting the root cause](docs/screenshots/05-internal-note.png)
+
+The agent then posts a **reply to the user** with the fix and next steps. Replying claims the ticket, so it's now assigned and every later action is attributed:
+
+![Agent reply posted to the user](docs/screenshots/06-agent-reply.png)
 
 ### 4. Resolution and Closure
 
-Once the issue is fixed, the agent documents the resolution details on the ticket and sets the status to **Resolved**; the user is notified with the resolution information. After user acknowledgment or a predefined waiting period, the ticket is marked **Closed** — preserving a searchable record for future incidents and knowledge-base articles.
+After confirming the fix with the user, the agent posts a final reply and sets the ticket status to **Resolved**. The thread preserves the complete history — intake, internal note, replies, and the closing event with timestamps:
+
+![Ticket thread showing the full history and Resolved status](docs/screenshots/07-ticket-resolved.png)
+
+The ticket now appears in the **Closed** queue, a searchable record for future incidents and knowledge-base articles:
+
+![Closed queue listing the resolved ticket](docs/screenshots/08-closed-queue.png)
 
 ## Takeaways
 
