@@ -2,65 +2,56 @@
 <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
 </p>
 
-<h1>osTicket - Ticket Lifecycle: Intake Through Resolution</h1>
-This tutorial outlines the lifecycle of a ticket from intake to resolution within the open-source help desk ticketing system osTicket.<br />
+# osTicket — Ticket Lifecycle: Intake Through Resolution
 
+This walkthrough follows a help desk ticket through its full lifecycle in [osTicket](https://osticket.com/), the open-source ticketing system — from the moment a user submits an issue to final resolution and closure. It builds on the environment set up in [osTicket — Prerequisites and Installation](https://github.com/DorseaColwell/osticket-prereqs).
 
+## Environments and Technologies Used
 
-<h2>Environments and Technologies Used</h2>
-
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
+- Microsoft Azure (Virtual Machines / Compute)
+- Remote Desktop (RDP)
 - Internet Information Services (IIS)
+- osTicket
 
-<h2>Operating Systems Used </h2>
+## Operating Systems Used
 
-- Windows 10</b> (21H2)
+- Windows 10 21H2
 
-<h2>Ticket Lifecycle Stages</h2>
+## Ticket Lifecycle at a Glance
 
-- Intake
-- Assignment and Communication
-- Working the Issue
-- Resolution
+```mermaid
+flowchart LR
+    A["Intake
+user submits ticket"] --> B["New"]
+    B --> C["Assignment
+agent / department"]
+    C --> D["Open
+acknowledgment sent"]
+    D --> E["Working the issue
+comms + internal notes"]
+    E --> F["Resolved
+resolution documented"]
+    F --> G["Closed"]
+```
 
-<h2>Lifecycle Stages</h2>
+## Lifecycle Stages
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Ticket Creation (Intake)
+### 1. Ticket Creation (Intake)
 
-A user submits a new ticket through the client portal or via email.
-The system assigns a unique ticket ID and sets the status to "New."
-Assignment and Initial Response
+A user submits a new ticket through the client portal or via email. osTicket assigns a unique ticket ID and sets the status to **New**. Help topics (e.g., *Business Critical Outage* vs. *Personal Computer Issues*) route the ticket and set its initial priority.
 
-An agent reviews the new ticket and assigns it to the appropriate department or individual.
-The ticket status changes to "Open."
-An acknowledgment is sent to the user, confirming receipt.
-</p>
-<br />
+### 2. Assignment and Initial Response
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Investigation and Resolution
+An agent reviews the incoming ticket, sets its **priority** and **SLA** based on impact, and assigns it to the appropriate department or individual. The status changes to **Open**, and an acknowledgment is sent to the user confirming receipt.
 
-The assigned agent investigates the issue, communicates with the user for additional information if necessary, and works towards resolving the problem.
-Throughout this process, the ticket status remains "Open," and internal notes or responses are documented.
-</p>
-<br />
+### 3. Working the Issue
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Resolution and Closure
+The assigned agent investigates, communicating with the user through the ticket thread when more information is needed. All correspondence and internal notes are documented on the ticket, so any agent can pick up the full history. Throughout this stage the ticket remains **Open**.
 
-Once the issue is resolved, the agent updates the ticket with the resolution details.
-The ticket status is changed to "Resolved," and a notification is sent to the user with the resolution information.
-After a predefined period or upon user acknowledgment, the ticket is automatically or manually marked as "Closed."
-</p>
-<br />
+### 4. Resolution and Closure
+
+Once the issue is fixed, the agent documents the resolution details on the ticket and sets the status to **Resolved**; the user is notified with the resolution information. After user acknowledgment or a predefined waiting period, the ticket is marked **Closed** — preserving a searchable record for future incidents and knowledge-base articles.
+
+## Takeaways
+
+Working tickets end-to-end in osTicket exercises the fundamentals of real help desk operations: triage and prioritization by business impact, SLA awareness, clear user communication, and disciplined documentation from intake to closure.
