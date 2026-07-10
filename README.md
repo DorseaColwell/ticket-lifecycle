@@ -21,16 +21,11 @@ This walkthrough follows a help desk ticket through its full lifecycle in [osTic
 
 ```mermaid
 flowchart LR
-    A["Intake
-user submits ticket"] --> B["New"]
-    B --> C["Assignment
-agent / department"]
-    C --> D["Open
-acknowledgment sent"]
-    D --> E["Working the issue
-comms + internal notes"]
-    E --> F["Resolved
-resolution documented"]
+    A["Intake<br/>user submits ticket"] --> B["New"]
+    B --> C["Assignment<br/>agent / department"]
+    C --> D["Open<br/>acknowledgment sent"]
+    D --> E["Working the issue<br/>comms + internal notes"]
+    E --> F["Resolved<br/>resolution documented"]
     F --> G["Closed"]
 ```
 
